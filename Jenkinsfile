@@ -5,21 +5,21 @@ pipeline {
         stage('Build') {
             steps {
                 // Clean and build Maven project
-                bat 'mvn clean install'
+                sh 'mvn clean install'
             }
         }
         
         stage('Test') {
             steps {
                 // Run unit tests using Surefire Plugin
-                bat 'mvn test'
+                sh 'mvn test'
             }
         }
         
         stage('Deploy') {
             steps {
                 // Deploy Maven artifact (adjust this command based on your deployment needs)
-                bat 'mvn deploy'
+                sh 'mvn deploy'
             }
         }
     }
